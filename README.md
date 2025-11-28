@@ -101,33 +101,29 @@ echo 'export GOOGLE_API_KEY="your_gemini_api_key"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-## Running the Bot
-
-1. Open terminal/command prompt in the bot's directory
-2. Run the bot:
-   ```bash
-   python NoFlairBot.py
-   ```
-3. The bot will run continuously and log activity to `log.txt`
-4. Press `Ctrl+C` to stop the bot
-
 ## Customizing for Your Subreddit
 
 ### Basic Configuration
 
 Open `NoFlairBot.py` and modify these key variables:
 
-1. **Change the subreddit** (line 30):
+1. **Update the user agent** (line 24):
+   ```python
+   user_agent="YourBotName by /u/YourRedditUsername"
+   ```
+   Replace with your bot's name and your personal Reddit username. This identifies your bot to Reddit's API.
+
+2. **Change the subreddit** (line 30):
    ```python
    subreddit = reddit.subreddit("YourSubredditName")
    ```
 
-2. **Change the bot username** (line 52):
+3. **Change the bot username** (line 52):
    ```python
    bot_username = "YourBotUsername"
    ```
 
-3. **Change the subreddit name** (line 53):
+4. **Change the subreddit name** (line 53):
    ```python
    subreddit_name = "YourSubredditName"
    ```
@@ -161,6 +157,16 @@ Open `NoFlairBot.py` and modify these key variables:
 - **Change post age limit** (line 88): Currently set to 7 days
 - **Adjust rate limits** based on your subreddit's activity level
 - **Modify AI model**: Change `'models/gemini-2.5-flash'` to another Gemini model if needed
+
+## Running the Bot
+
+1. Open terminal/command prompt in the bot's directory
+2. Run the bot:
+   ```bash
+   python NoFlairBot.py
+   ```
+3. The bot will run continuously and log activity to `log.txt`
+4. Press `Ctrl+C` to stop the bot
 
 ## Troubleshooting
 
